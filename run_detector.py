@@ -101,7 +101,7 @@ if __name__ == '__main__':
     parser.add_argument('--player_threshold', help='player confidence detection threshold', type=float, default=1.1)
     parser.add_argument('--out_video', help='path to video with detection results', type=str,
                         default='images/test4.mp4')
-    parser.add_argument('--device', help='device (CPU or CUDA)', type=str, default='cpu')
+    parser.add_argument('--device', help='device (CPU or CUDA)', type=str, default='cuda:0')
     args = parser.parse_args()
 
     print('Video path: {}'.format(args.path))
