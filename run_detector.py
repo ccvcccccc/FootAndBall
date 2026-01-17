@@ -94,14 +94,14 @@ if __name__ == '__main__':
 
     # Train the DeepBall ball detector model
     parser = argparse.ArgumentParser()
-    parser.add_argument('--path', help='path to video', type=str, required=True)
+    parser.add_argument('--path', help='path to video', type=str,default='images/test.mp4')
     parser.add_argument('--model', help='model name', type=str, default='fb1')
-    parser.add_argument('--weights', help='path to model weights', type=str, required=True)
-    parser.add_argument('--ball_threshold', help='ball confidence detection threshold', type=float, default=0.7)
-    parser.add_argument('--player_threshold', help='player confidence detection threshold', type=float, default=0.7)
-    parser.add_argument('--out_video', help='path to video with detection results', type=str, required=True,
-                        default=None)
-    parser.add_argument('--device', help='device (CPU or CUDA)', type=str, default='cuda:0')
+    parser.add_argument('--weights', help='path to model weights', type=str, default='models/model_20201019_1416_final.pth')
+    parser.add_argument('--ball_threshold', help='ball confidence detection threshold', type=float, default=0.2)
+    parser.add_argument('--player_threshold', help='player confidence detection threshold', type=float, default=1.1)
+    parser.add_argument('--out_video', help='path to video with detection results', type=str,
+                        default='images/test4.mp4')
+    parser.add_argument('--device', help='device (CPU or CUDA)', type=str, default='cpu')
     args = parser.parse_args()
 
     print('Video path: {}'.format(args.path))
